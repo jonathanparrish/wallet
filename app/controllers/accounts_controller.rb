@@ -5,8 +5,17 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
+    total = 0
+    @accounts.each do |transaction|
+      total += transaction.amount
+    end
+    @total_amount = total
+    @transaction_number = @accounts.length
   end
 
+  # def acct_statement
+  #   if @total_amount
+  # end
   # GET /accounts/1
   # GET /accounts/1.json
   def show
