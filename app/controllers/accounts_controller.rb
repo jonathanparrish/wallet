@@ -11,11 +11,18 @@ class AccountsController < ApplicationController
     end
     @total_amount = total
     @transaction_number = @accounts.length
+    if @total_amount < 0
+      @account_status = "Slow down on the spending, you're balance is NEGATIVE!"
+      @mood_image = "https://i.imgflip.com/gy2s4.jpg"
+    else
+      @account_status = "Your account is in good standing!"
+      @mood_image = "https://i.imgflip.com/gy34a.jpg"
+    end
   end
 
-  # def acct_statement
-  #   if @total_amount
-  # end
+  def acct_statement
+
+  end
   # GET /accounts/1
   # GET /accounts/1.json
   def show
