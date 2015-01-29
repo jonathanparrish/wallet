@@ -18,6 +18,7 @@ class AccountsController < ApplicationController
       @account_status = "Your account is in good standing!"
       @mood_image = "https://i.imgflip.com/gy34a.jpg"
     end
+
   end
 
   def acct_statement

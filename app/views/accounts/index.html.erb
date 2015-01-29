@@ -24,9 +24,9 @@
     <% end %>
   </tbody>
 </table>
-<p> Your balance is $<%=  @total_amount      %>  </p>
+<p> Your balance is <%= number_to_currency(@total_amount)%>  </p>
 <p> Your number of transactions are <%= @transaction_number %></p>
-<p> Your account standing is: <%= @account_status %></p>
+<p> Account Status: <%= @account_status %></p>
 <img src= <%= @mood_image %> style="width:400px"></img>
 <br>
 <%= link_to 'New Account', new_account_path %>
